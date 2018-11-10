@@ -19,3 +19,6 @@ Jolloin muutokset olivat päivittyneet tiedostoon. Kun kirjoitin muutokset komen
  git commit (voit kommentoida muutosta)
  git pull (haetaan mahdolliset muutokset GitHubista ensin)
  git push (julistetaan muutokset GitHubiin)
+
+Tämä teksti on kirjoitettu sen jälkeen komentorivillä, kun olin ensin kirjoittanut ensin otsikon aiheesta samanaikainen muokkaus.
+
