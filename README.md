@@ -37,9 +37,9 @@ Seuraavaksi testaan ihan mielenkiinnosta, mitä tapahtuu jos muokkaan samaa tied
 
 Tuloksena oli ristiriita:
 
-Auto-merging README.md
-CONFLICT (content): Merge conflict in README.md
-Automatic merge failed; fix conflicts and then commit the result.
+    Auto-merging README.md
+    CONFLICT (content): Merge conflict in README.md
+    Automatic merge failed; fix conflicts and then commit the result.
 
 eli en saanut julkaistua tekstiä komentoriviltä ja dokumenttiin tuli ohjelmallisesti ylläolevat ilmoitukset ennen otsikkoa (<<<<<HEAD) ja rivi otsikon kappaleen alle, jossa SHA-1 luku. Kun annoin uudelleen komennot add., git commit, git pull, git push muutokset onnituivat. Jätin tekstiin tulleet ilmoitukset näkyviin dokumenttiin.
 
@@ -51,13 +51,13 @@ Testataan komentoa
 
 Tuloksena useampi rivi seuraavanlaisia ilmoituksia:
 
-commit a36a79e5641c43589e76c80492626678a87a3f80 (HEAD -> master, origin/master, origin/HEAD)
-Merge: da44e62 4fdef09
-Author: Seppanen <spe@trainee.train>
-Date:   Sat Nov 10 18:46:16 2018 +0000
+    commit a36a79e5641c43589e76c80492626678a87a3f80 (HEAD -> master, origin/master, origin/HEAD)
+    Merge: da44e62 4fdef09
+    Author: Seppanen <spe@trainee.train>
+    Date:   Sat Nov 10 18:46:16 2018 +0000
 
-   Ilmoitukset mitä tuli samanaikaisesta päivityksestä
-   Merge branch 'master' of https://github.com/SeppanenP/spegit
+    Ilmoitukset mitä tuli samanaikaisesta päivityksestä
+    Merge branch 'master' of https://github.com/SeppanenP/spegit
 
 Ensimmäisellä rivillä on SHA-1 tarkastusrivi, jonka avulla voidaan jäljitää muutoksia myöhemmin testattavalla git diff komennolla. Seuraavana on muutoksen tekijä ja aikaleima. Viimeisenä kommentti/lisätieto muutoksesta, minkä olen itse kirjoittanut git commitin jälkeen.
 
