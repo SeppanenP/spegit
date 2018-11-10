@@ -8,4 +8,10 @@ Kopioin omalta tililtäni luomani varaston osoitteen ja kopioin sen koneelle
 
  git clone https://github.com/SeppanenP/spegit.git
 
-Koneelle tuli spegit-kansio polkuun /home/xubuntu/spegit. Kansiosta löytyi 
+Koneelle tuli spegit-kansio polkuun /home/xubuntu/spegit. Kansiosta löytyi README.md tiedosto.
+
+Seuraavaksi aloin muokkaamaan tiedostoa komentoriviltä. Kun avasin sen siitä puuttui viimeisimmät GitHubissa tekemäni päivitykset. En ollut päivittänyt koneella olevaa versiota, joten palasin ilman muutoksia ja annoin komennon:
+
+ git pull
+
+Jolloin muutokset olivat päivittyneet.
