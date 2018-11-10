@@ -30,5 +30,7 @@ Tämä teksti on kirjoitettu sen jälkeen komentorivillä, kun olin ensin kirjoi
 =======
 # Mitä tapahtuu jos samaa tidostoa muokataan samanaikaisesti?
 
-Seuraavaksi testaan ihan mielenkiinnosta, mitä tapahtuu jos muokkaan samaa tiedostoa samaan aikaan. Tämä tallennetaan ensin.
+Seuraavaksi testaan ihan mielenkiinnosta, mitä tapahtuu jos muokkaan samaa tiedostoa samaan aikaan GitHubissa. Tämä tallennetaan ensin.
 >>>>>>> 4fdef09e2c604ca8b794aec911a442612ea357f3
+
+Tuloksena oli ristiriita, eli en saanut julkaistua tekstiä komentoriviltä ja dokumenttiin tuli ylläolevat muutokset. Kun annoin uudelleen komennot add., git commit, git pull, git push muutokset onnituivat. Jätin tekstiin tulleet ilmoitukset talteen.
