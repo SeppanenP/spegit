@@ -63,6 +63,8 @@ Ensimmäisellä rivillä on SHA-1 tarkastusrivi, jonka avulla voidaan jäljitä�
 Seuraavaksi kokeillaan mitä muutoksia kahdessa README.md tiedostojen välillä on tapahtunut. Komennon jälkeen laitetaan molempien tiedostojen SHA-1 luku, joka saadaan git logilla:
 
  git diff d931913a92f30ffd1c75cb13278564a4f810eb66 c57b75b8e0fae4952205327ef4e44c30756dd6f2
+
+Tuloksena tuli:
  
  diff --git a/README.md b/README.md
  index 8521be4..035803f 100644
@@ -76,6 +78,20 @@ Seuraavaksi kokeillaan mitä muutoksia kahdessa README.md tiedostojen välillä 
 
 Ylläolevassa tuloksessa ei näy värejä, mutta viimeinen rivi "-git diff" on punaisella ja se on ainoa muutos kahden viimeisimmän version välissä.
 
+Seuraavaksi testataan samaa komentoa niin että tehdään muutoksia README.md tiedostoon komentorivillä, mutta ei julkaista niitä vielä push-komennolla GitHubiin.
 
+Tuloksena seuraavaa:
 
+diff --git a/README.md b/README.md
+index 61718fb..72b93c6 100644
+--- a/README.md
++++ b/README.md
+@@ -76,6 +76,8 @@ Seuraavaksi kokeillaan mitä muutoksia kahdessa README.md tiedostojen välillä
+ 
+ Ylläolevassa tuloksessa ei näy värejä, mutta viimeinen rivi "-git diff" on punaisella ja se on ainoa muutos kahden viimeisimmän version välissä.
+ 
++Seuraavaksi testataan samaa komentoa niin että tehdään muutoksia README.md tiedostoon komentorivillä, mutta ei julkaista niitä vielä push-komennolla GitHubiin.
++
+ 
 
+Viimeinen rivi (+ merkkien välissä+) on vihreänä, eli olen tehnyt muutoksia README.md tiedostoon.
