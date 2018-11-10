@@ -27,7 +27,7 @@ Jolloin muutokset olivat päivittyneet tiedostoon. Kun kirjoitin muutokset komen
 Kaikki tekemäni muutokset näkyivät hienosti GitHubin puolella. Seuraavaksi testataan lisää julkaisemista.
 
 <<<<<<< HEAD
-Tämä teksti on kirjoitettu sen jälkeen komentorivillä, kun olin ensin kirjoittanut ensin otsikon aiheesta samanaikainen muokkaus.
+Tämä teksti on kirjoitettu komentorivillä sen jälkeen, kun olin ensin kirjoittanut ensin otsikon ja ensimmäisen kappaleen aiheesta "Mitä tapahtuu jos samaa tiedostoa muokataan samanaikaisesti?" GitHubissa.
 
 =======
 # Mitä tapahtuu jos samaa tiedostoa muokataan samanaikaisesti?
