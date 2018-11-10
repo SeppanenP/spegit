@@ -138,3 +138,11 @@ Tällöin rivin akuun tulee koko SHA-1 luku joka voidaan kopioida vaikkapa git d
     be4fc1d54b0399589460446d4def566b40621520 (SeppanenP 2018-11-10 20:19:38 +0200  10) 
     c01c9c089804ad5b2bca81e84c77a0a418be3232 (Seppanen  2018-11-10 18:25:39 +0000  11) Koneelle tuli spegit-kansio polkuun      /home/xubuntu/spegit. Kansiosta löytyi README.md tiedosto.
 
+# Lähteet
+
+http://terokarvinen.com/
+https://git-scm.com/book/fi/v1/Gitin-perusteet-Muutosten-tallennus-tietol%C3%A4hteeseen
+https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
+https://git-scm.com/docs/git-blame
+
+
