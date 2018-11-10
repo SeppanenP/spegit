@@ -62,6 +62,8 @@ Ensimm채isell채 rivill채 on SHA-1 tarkastusrivi, jonka avulla voidaan j채ljit채�
 
 Seuraavaksi kokeillaan mit채 muutoksia kahdessa README.md tiedostojen v채lill채 on tapahtunut. Komennon j채lkeen laitetaan molempien tiedostojen SHA-1 luku, joka saadaan git logilla:
 
+git diff 
+
 
 
 
