@@ -81,7 +81,9 @@ Tuloksena tuli:
 
 Ylläolevassa tuloksessa ei näy värejä, mutta viimeinen rivi "-git diff" on punaisella ja se on ainoa muutos kahden viimeisimmän version välissä.
 
-Seuraavaksi testataan samaa komentoa niin että tehdään muutoksia README.md tiedostoon komentorivillä, mutta ei julkaista niitä vielä push-komennolla GitHubiin.
+Seuraavaksi testataan samaa komentoa niin että tehdään muutoksia README.md tiedostoon komentorivillä, mutta ei julkaista niitä vielä push-komennolla GitHubiin ja annetaan muutosten jälkeen pelkkä:
+
+    git diff
 
 Tuloksena seuraavaa:
 
@@ -101,3 +103,38 @@ Viimeinen rivi (+ merkkien välissä+) on vihreänä, eli olen tehnyt muutoksia 
     git add .
 
 Muutoksia ei näe enää pelkällä git diff komennolla.
+
+# Git Blame
+
+Seuraavaksi testataan komentoa
+
+    git blame
+
+Komento palauttaa nykyisen tekstin kaikki rivit jossa näkyy viimeisen muutoksen aikaleima ja muutoksen tekijä:
+
+    0c7bfaa (SeppanenP 2018-11-10 19:58:38 +0200   5) 
+    e1506551 (SeppanenP 2018-11-10 20:04:46 +0200   6) # Varaston kopioiminen koneelle
+    e1506551 (SeppanenP 2018-11-10 20:04:46 +0200   7) Kopioin omalta tililtäni luomani varaston osoitteen ja kopioin sen koneelle
+    be4fc1d5 (SeppanenP 2018-11-10 20:19:38 +0200   8) 
+    46c46344 (SeppanenP 2018-11-10 20:10:58 +0000   9)     git clone https://github.com/SeppanenP/spegit.git
+    be4fc1d5 (SeppanenP 2018-11-10 20:19:38 +0200  10) 
+    c01c9c08 (Seppanen  2018-11-10 18:25:39 +0000  11) Koneelle tuli spegit-kansio polkuun /home/xubuntu/spegit. Kansiosta löytyi README.md tiedosto.
+    c01c9c08 (Seppanen  2018-11-10 18:25:39 +0000  12) 
+    c01c9c08 (Seppanen  2018-11-10 18:25:39 +0000  13) Seuraavaksi aloin muokkaamaan tiedostoa komentoriviltä. Kun avasin sen siitä puuttui viimeisimmät GitHubissa tekemäni päivitykset. En ollut päivittänyt koneella olevaa versiota, joten palasin ilman muutoksia ja annoin komennon:
+    c01c9c08 (Seppanen  2018-11-10 18:25:39 +0000  14) 
+    46c46344 (SeppanenP 2018-11-10 20:10:58 +0000  15)     git pull
+
+Tehtyjä muutoksia ei voi nähdä. Rivin alussa on vain SHA-1 luvun alku. Jos haluaa nähdä koko luvun esimerkiksi git diff-komentoa varten on annettava komento:
+
+    git blame -l README.md
+
+Tällöin rivin akuun tulee koko SHA-1 luku joka voidaan kopioida vaikkapa git diff vertailuun:
+
+    0c7bfaadedc29c1d2374585e31eda81a4f858b7 (SeppanenP 2018-11-10 19:58:38 +0200   5) 
+    e150655107721e4693017df8369830a93ed318f2 (SeppanenP 2018-11-10 20:04:46 +0200   6) # Varaston kopioiminen koneelle
+    e150655107721e4693017df8369830a93ed318f2 (SeppanenP 2018-11-10 20:04:46 +0200   7) Kopioin omalta tililtäni luomani varaston    osoitteen ja kopioin sen koneelle
+    be4fc1d54b0399589460446d4def566b40621520 (SeppanenP 2018-11-10 20:19:38 +0200   8) 
+    46c4634406f4bf16199302c2ce4e2a436ab07b2b (SeppanenP 2018-11-10 20:10:58 +0000   9)     git clone https://github.com/SeppanenP/spegit.git
+    be4fc1d54b0399589460446d4def566b40621520 (SeppanenP 2018-11-10 20:19:38 +0200  10) 
+    c01c9c089804ad5b2bca81e84c77a0a418be3232 (Seppanen  2018-11-10 18:25:39 +0000  11) Koneelle tuli spegit-kansio polkuun      /home/xubuntu/spegit. Kansiosta löytyi README.md tiedosto.
+
