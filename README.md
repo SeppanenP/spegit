@@ -5,4 +5,7 @@ Koneena minulla oli Fujitsu Lifebook  AH531, i3-2328M, Windows 7. Käyttämäni 
 
 # Varaston kopioiminen koneelle
 Kopioin omalta tililtäni luomani varaston osoitteen ja kopioin sen koneelle
- git clone 
+
+ git clone https://github.com/SeppanenP/spegit.git
+
+Koneelle tuli spegit-kansio polkuun /home/xubuntu/spegit. Kansiosta löytyi 
