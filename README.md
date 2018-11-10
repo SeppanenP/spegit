@@ -74,6 +74,8 @@ Seuraavaksi kokeillaan mitä muutoksia kahdessa README.md tiedostojen välillä 
  
  -git diff 
 
-Tekstissä ei näy värejä, mutta viimeinen rivi "-git diff" on punaisella ja viimeisin julkistettu muutos tekstissä.
+Ylläolevassa tuloksessa ei näy värejä, mutta viimeinen rivi "-git diff" on punaisella ja se on ainoa muutos kahden viimeisimmän version välissä.
+
+
 
 
