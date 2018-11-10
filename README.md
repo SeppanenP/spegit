@@ -15,7 +15,15 @@ Seuraavaksi aloin muokkaamaan tiedostoa komentoriviltä. Kun avasin sen siitä p
  git pull
 
 Jolloin muutokset olivat päivittyneet tiedostoon. Kun kirjoitin muutokset komentoriviltä ja tallensin ne annoin seuraavaksi komennot:
+
  git add . (valmistelee tiedoston siirtoon)
+ 
  git commit (voit kommentoida muutosta)
+ 
  git pull (haetaan mahdolliset muutokset GitHubista ensin)
+ 
  git push (julistetaan muutokset GitHubiin)
+
+# Mitä tapahtuu jos samaa tidostoa muokataan samanaikaisesti?
+
+Seuraavaksi testaan ihan mielenkiinnosta, mitä tapahtuu jos muokkaan samaa tiedostoa samaan aikaan. Tämä kommentoidaan ensin.
