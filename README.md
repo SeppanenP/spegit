@@ -30,7 +30,7 @@ Kaikki tekemäni muutokset näkyivät hienosti GitHubin puolella. Seuraavaksi te
 Tämä teksti on kirjoitettu sen jälkeen komentorivillä, kun olin ensin kirjoittanut ensin otsikon aiheesta samanaikainen muokkaus.
 
 =======
-# Mitä tapahtuu jos samaa tidostoa muokataan samanaikaisesti?
+# Mitä tapahtuu jos samaa tiedostoa muokataan samanaikaisesti?
 
 Seuraavaksi testaan ihan mielenkiinnosta, mitä tapahtuu jos muokkaan samaa tiedostoa samaan aikaan GitHubissa. Tämä teksti tallennetaan ensin.
 >>>>>>> 4fdef09e2c604ca8b794aec911a442612ea357f3
