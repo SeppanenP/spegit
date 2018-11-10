@@ -26,4 +26,4 @@ Jolloin muutokset olivat päivittyneet tiedostoon. Kun kirjoitin muutokset komen
 
 # Mitä tapahtuu jos samaa tidostoa muokataan samanaikaisesti?
 
-Seuraavaksi testaan ihan mielenkiinnosta, mitä tapahtuu jos muokkaan samaa tiedostoa samaan aikaan. Tämä kommentoidaan ensin.
+Seuraavaksi testaan ihan mielenkiinnosta, mitä tapahtuu jos muokkaan samaa tiedostoa samaan aikaan. Tämä tallennetaan ensin.
