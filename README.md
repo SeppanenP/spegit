@@ -33,6 +33,35 @@ Tämä teksti on kirjoitettu sen jälkeen komentorivillä, kun olin ensin kirjoi
 Seuraavaksi testaan ihan mielenkiinnosta, mitä tapahtuu jos muokkaan samaa tiedostoa samaan aikaan GitHubissa. Tämä teksti tallennetaan ensin.
 >>>>>>> 4fdef09e2c604ca8b794aec911a442612ea357f3
 
-Tuloksena oli ristiriita, eli en saanut julkaistua tekstiä komentoriviltä ja dokumenttiin tuli ylläolevat muutokset joissa on rivin alussa <<<<<, ====== tai >>>>>. Kun annoin uudelleen komennot add., git commit, git pull, git push muutokset onnituivat. Jätin tekstiin tulleet ilmoitukset talteen.
+Tuloksena oli ristiriita:
+
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+eli en saanut julkaistua tekstiä komentoriviltä ja dokumenttiin tuli ylläolevat muutokset (rivin alussa <<<<<, ====== tai >>>>>). Kun annoin uudelleen komennot add., git commit, git pull, git push muutokset onnituivat. Jätin tekstiin tulleet ilmoitukset talteen.
+
+# Git log
+
+Testataan komentoa
+ git log
+
+Tuloksena useampi rivi seuraavanlaisia ilmoituksia:
+
+commit a36a79e5641c43589e76c80492626678a87a3f80 (HEAD -> master, origin/master, origin/HEAD)
+Merge: da44e62 4fdef09
+Author: Seppanen <spe@trainee.train>
+Date:   Sat Nov 10 18:46:16 2018 +0000
+
+    Ilmoitukset mitä tuli samanaikaisesta päivityksestä
+    Merge branch 'master' of https://github.com/SeppanenP/spegit
+
+Ensimmäisellä rivillä on SHA-1 tarkastusrivi, jonka avulla voidaan jäljitää muutoksia myöhemmin testattavalla git diff komennolla. Seuraavana on muutoksen tekijä ja aikaleima. Viimeisenä kommentti/lisätieto muutoksesta, minkä olen itse kirjoittanut git commitin jälkeen.
+
+# Git diff
+
+Seuraavaksi kokeillaan mitä muutoksia kahdessa README.md tiedostojen välillä on tapahtunut. Komennon jälkeen laitetaan molempien tiedostojen SHA-1 luku, joka saadaan git logilla:
+
+
 
 
