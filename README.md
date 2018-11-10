@@ -141,8 +141,11 @@ Tällöin rivin akuun tulee koko SHA-1 luku joka voidaan kopioida vaikkapa git d
 # Lähteet
 
 http://terokarvinen.com/
+
 https://git-scm.com/book/fi/v1/Gitin-perusteet-Muutosten-tallennus-tietol%C3%A4hteeseen
+
 https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
+
 https://git-scm.com/docs/git-blame
 
 
