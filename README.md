@@ -234,8 +234,7 @@ Kun julkaisin muutokset git add ./commit/pull/push, niin vain README.md tiedosto
 
 ## Lopuksi
 
-Tehtävä oli todella mielenkiintoinen ja raportin tekeminen oli näppärää, kun pystyin kopioimaan tekstiä suoraan komentoriviltä Livetikkukoneella ja siirtämään sen raporttiin suoraan komentorivillä. Päivittämisen jälkeen pystyin muokaamaan toisella koneella samaa tiedostoa GitHubissa. Yksittäinen aikaavievin tehtävä oli löytää tapa ajaa moduli salt-minion koneella paikallisesti, mutta siihen löytyi apuja pienen selailun jälkeen. Aikaa tehtäviin meni parisen pitkää iltaa viikonloppuna.
-
+Tehtävä oli todella mielenkiintoinen ja raportin tekeminen oli näppärää, kun pystyin kopioimaan tekstiä suoraan komentoriviltä Livetikkukoneella ja siirtämään sen raporttiin suoraan komentorivillä. Päivittämisen jälkeen pystyin muokaamaan toisella koneella samaa tiedostoa GitHubissa tai samanaikaisesti tehdä uusia kansioita ja .sls-tiedostoja. Yksittäinen aikaavievä tehtävä oli löytää tapa ajaa moduli salt-minion koneella paikallisesti, mutta siihen löytyi apuja pienen selailun jälkeen. 
 
 ## Lähteet
 
