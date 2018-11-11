@@ -193,6 +193,41 @@ Hetkeen ei tapahtunut mitään, mutta lopulta molemmat ohjelmat asentuivat konee
 
 Molemmat ohjelmat löytyivät livetikkukoneelta.
 
+## Git reset --hard
+
+Seuraavaksi kokeillaan otsikon komentoa. Ensin tehdään tyhmä lisäys init.sls-tiedostoon ja lisäsin sinne windows asennuksen. Sen jälkeen annoin komennon
+
+	git add .
+
+git blame init.sls näytti seuraavanlaiselle:
+
+xubuntu@xubuntu:~/spegit/srv/salt/tools$ git blame init.sls
+616a2948 (SeppanenP         2018-11-11 20:09:51 +0200 1) install_tools:
+616a2948 (SeppanenP         2018-11-11 20:09:51 +0200 2)   pkg.installed:
+616a2948 (SeppanenP         2018-11-11 20:09:51 +0200 3)   - pkgs:
+616a2948 (SeppanenP         2018-11-11 20:09:51 +0200 4)     - gimp
+616a2948 (SeppanenP         2018-11-11 20:09:51 +0200 5)     - vlc
+00000000 (Not Committed Yet 2018-11-11 19:18:04 +0000 6)     - windows
+
+Valitettavasti tuo Windows ei taida asentua noin helposti koneelle, joten joudun poistamaan sen asennettavien ohjelmien joukosta. Koska olin antanut jo git add . komennon muutokset on jo valmisteltu julkaisemista varten.
+Annoin komennon:
+
+	git reset --hard
+
+Jolloin tuli ilmoitus:
+
+xubuntu@xubuntu:~/spegit/srv/salt/tools$ git reset --hard
+HEAD is now at 3a55795 Update top.sls
+
+
+ja git blame näytti:
+
+xubuntu@xubuntu:~/spegit/srv/salt/tools$ git blame init.sls
+616a2948 (SeppanenP 2018-11-11 20:09:51 +0200 1) install_tools:
+616a2948 (SeppanenP 2018-11-11 20:09:51 +0200 2)   pkg.installed:
+616a2948 (SeppanenP 2018-11-11 20:09:51 +0200 3)   - pkgs:
+616a2948 (SeppanenP 2018-11-11 20:09:51 +0200 4)     - gimp
+616a2948 (SeppanenP 2018-11-11 20:09:51 +0200 5)     - vlc
 
 
 ## Lähteet
