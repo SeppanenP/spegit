@@ -1,0 +1,6 @@
+install_tools:
+  pkg.isntalled:
+    -pkgs:
+      - vlc
+      - gimp
+      - scrot
