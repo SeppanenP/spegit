@@ -168,6 +168,31 @@ En tehnyt high.sh-tiedostoa vaan menin spegit kansioon ja annoin komennon:
         
 Hetkeen ei tapahtunut mitään, mutta lopulta molemmat ohjelmat asentuivat koneelle.
 
+xubuntu@xubuntu:~/spegit$ sudo salt-call --local state.highstate --file-root srv/salt
+local:
+----------
+          ID: install_tools
+    Function: pkg.installed
+      Result: True
+     Comment: The following packages were installed/updated: gimp, vlc
+     Started: 18:33:54.800482
+    Duration: 40914.462 ms
+     Changes:   
+              ----------
+              gimp:
+
+
+
+Summary for local
+------------
+Succeeded: 1 (changed=1)
+Failed:    0
+------------
+Total states run:     1
+Total run time:  40.914 s
+
+
+
 ## Lähteet
 
 http://terokarvinen.com/
