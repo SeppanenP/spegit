@@ -146,7 +146,7 @@ Tein ensimmäiseksi spegit-varastoon kansiot srv/salt. Salt kansioon tein top.sl
       '*':
         - tools
         
-Tein salt kansioon kansion tools, johon tein init.sls-tiedoston:
+Tein salt kansioon kansion /srv/salt/tools, johon tein init.sls-tiedoston:
 
     install_tools:
       pkg.installed:
@@ -154,7 +154,7 @@ Tein salt kansioon kansion tools, johon tein init.sls-tiedoston:
         - gimp
         - vlc
         
-Tämän jälkeen kloonasin paketit livetikku-koneelle
+Tämän jälkeen kloonasin paketit livetikku-koneelle, johon oli kloonannut tämän GitHub-varaston
 
     git pull
    
