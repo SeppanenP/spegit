@@ -3,7 +3,7 @@ Tehtävä piti tehdä MarkDownina GitHubissa. Aluksi pitää luoda GitHubiin var
 http://terokarvinen.com/2016/publish-your-project-with-github
 Koneena minulla oli Fujitsu Lifebook  AH531, i3-2328M, Windows 7. Käyttämäni livetikun olin päivittänyt ensin uudempaan versioon Xubuntu 18.04.1 LST, koska olin huomannut jotain ongelmia työskennellessäni vanhalla tikulla, jossa oli Xubuntu 16.4.
 
-# Varaston kopioiminen koneelle
+## Varaston kopioiminen koneelle
 Kopioin omalta tililtäni luomani varaston osoitteen ja kopioin sen koneelle
 
     git clone https://github.com/SeppanenP/spegit.git
@@ -30,7 +30,7 @@ Kaikki tekemäni muutokset näkyivät hienosti GitHubin puolella. Seuraavaksi te
 Tämä teksti on kirjoitettu komentorivillä sen jälkeen, kun olin ensin kirjoittanut ensin otsikon ja ensimmäisen kappaleen aiheesta "Mitä tapahtuu jos samaa tiedostoa muokataan samanaikaisesti?" GitHubissa.
 
 =======
-# Mitä tapahtuu jos samaa tiedostoa muokataan samanaikaisesti?
+## Mitä tapahtuu jos samaa tiedostoa muokataan samanaikaisesti?
 
 Seuraavaksi testaan ihan mielenkiinnosta, mitä tapahtuu jos muokkaan samaa tiedostoa samaan aikaan GitHubissa. Tämä teksti tallennetaan ensin.
 >>>>>>> 4fdef09e2c604ca8b794aec911a442612ea357f3
@@ -43,7 +43,7 @@ Tuloksena oli ristiriita:
 
 eli en saanut julkaistua tekstiä komentoriviltä ja dokumenttiin tuli ohjelmallisesti ylläolevat ilmoitukset ennen otsikkoa (<<<<<HEAD) ja rivi otsikon kappaleen alle, jossa SHA-1 luku. Kun annoin uudelleen komennot add., git commit, git pull, git push muutokset onnituivat. Jätin tekstiin tulleet ilmoitukset näkyviin dokumenttiin.
 
-# Git log
+## Git log
 
 Testataan komentoa
 
@@ -61,7 +61,7 @@ Tuloksena useampi rivi seuraavanlaisia ilmoituksia:
 
 Ensimmäisellä rivillä on SHA-1 tarkastusrivi, jonka avulla voidaan jäljitää muutoksia myöhemmin testattavalla git diff komennolla. Seuraavana on muutoksen tekijä ja aikaleima. Viimeisenä kommentti/lisätieto muutoksesta, minkä olen itse kirjoittanut git commitin jälkeen.
 
-# Git diff
+## Git diff
 
 Seuraavaksi kokeillaan mitä muutoksia kahdessa README.md tiedostojen välillä on tapahtunut. Komennon jälkeen laitetaan molempien tiedostojen SHA-1 luku, joka saadaan git logilla:
 
@@ -104,7 +104,7 @@ Viimeinen rivi (+ merkkien välissä+) on vihreänä, eli olen tehnyt muutoksia 
 
 Muutoksia ei näe enää pelkällä git diff komennolla.
 
-# Git Blame
+## Git Blame
 
 Seuraavaksi testataan komentoa
 
@@ -138,7 +138,37 @@ Tällöin rivin akuun tulee koko SHA-1 luku joka voidaan kopioida vaikkapa git d
     be4fc1d54b0399589460446d4def566b40621520 (SeppanenP 2018-11-10 20:19:38 +0200  10) 
     c01c9c089804ad5b2bca81e84c77a0a418be3232 (Seppanen  2018-11-10 18:25:39 +0000  11) Koneelle tuli spegit-kansio polkuun      /home/xubuntu/spegit. Kansiosta löytyi README.md tiedosto.
 
-# Lähteet
+## Oma moduli /srv/salt Gittiin
+
+Tein ensimmäiseksi spegit-varastoon kansiot srv/salt. Salt kansioon tein top.sls-tiedoston:
+
+    base:
+      '*':
+        - tools
+        
+Tein salt kansioon kansion tools, johon tein init.sls-tiedoston:
+
+    install_tools:
+      pkg.installed:
+        - pkgs:
+        - gimp
+        - vlc
+        
+Tämän jälkeen kloonasin paketit livetikku-koneelle
+
+    git pull
+   
+Seurravaksi jouduin etsimään monestakin paikasta miten saan ajettua salt-minionilla modulin. Parhaimmat neuvot löysin aikaisemman kurssin Katri Laulajaisen oppilastyöstä:
+
+https://katrilaulajainen.wordpress.com/2018/05/02/palvelinten-hallinta-h5-29-4-2018-git-github-ja-markdown/
+
+En tehnyt high.sh-tiedostoa vaan menin spegit kansioon ja annoin komennon:
+
+    sudo salt-call --local state.highstate --file-root srv/salt
+        
+Hetkeen ei tapahtunut mitään, mutta lopulta molemmat ohjelmat asentuivat koneelle.
+
+## Lähteet
 
 http://terokarvinen.com/
 
@@ -147,5 +177,9 @@ https://git-scm.com/book/fi/v1/Gitin-perusteet-Muutosten-tallennus-tietol%C3%A4h
 https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
 
 https://git-scm.com/docs/git-blame
+
+https://katrilaulajainen.wordpress.com/2018/05/02/palvelinten-hallinta-h5-29-4-2018-git-github-ja-markdown/
+
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 
