@@ -10,7 +10,7 @@ Kopioin omalta tililtäni luomani varaston osoitteen ja kopioin sen koneelle
 
 Koneelle tuli spegit-kansio polkuun /home/xubuntu/spegit. Kansiosta löytyi README.md tiedosto.
 
-Seuraavaksi aloin muokkaamaan tiedostoa komentoriviltä. Kun avasin sen siitä puuttui viimeisimmät GitHubissa tekemäni päivitykset. En ollut päivittänyt koneella olevaa versiota, joten palasin ilman muutoksia ja annoin komennon:
+Seuraavaksi aloin muokkaamaan README.md tiedostoa komentoriviltä. Kun avasin sen siitä puuttui viimeisimmät GitHubissa tekemäni päivitykset. En ollut päivittänyt koneella olevaa versiota, joten palasin ilman muutoksia ja annoin komennon:
 
     git pull
 
@@ -32,7 +32,7 @@ Tämä teksti on kirjoitettu komentorivillä sen jälkeen, kun olin ensin kirjoi
 =======
 ## Mitä tapahtuu jos samaa tiedostoa muokataan samanaikaisesti?
 
-Seuraavaksi testaan ihan mielenkiinnosta, mitä tapahtuu jos muokkaan samaa tiedostoa samaan aikaan GitHubissa. Tämä teksti tallennetaan ensin.
+Seuraavaksi testaan ihan mielenkiinnosta, mitä tapahtuu jos muokkaan samaa tiedostoa samaan aikaan GitHubissa. Tämä teksti tallennetaan ensin GitHubiin ja seuraavaksi yritän julkaista komentorivillä tekemääni tekstiä.
 >>>>>>> 4fdef09e2c604ca8b794aec911a442612ea357f3
 
 Tuloksena oli ristiriita:
@@ -151,8 +151,8 @@ Tein salt kansioon kansion /srv/salt/tools, johon tein init.sls-tiedoston:
     install_tools:
       pkg.installed:
         - pkgs:
-        - gimp
-        - vlc
+          - gimp
+          - vlc
         
 Tämän jälkeen kloonasin paketit livetikku-koneelle, johon oli kloonannut tämän GitHub-varaston
 
@@ -201,13 +201,13 @@ Seuraavaksi kokeillaan otsikon komentoa. Ensin tehdään tyhmä lisäys init.sls
 
 git blame init.sls näytti seuraavanlaiselle:
 
-xubuntu@xubuntu:~/spegit/srv/salt/tools$ git blame init.sls
-616a2948 (SeppanenP         2018-11-11 20:09:51 +0200 1) install_tools:
-616a2948 (SeppanenP         2018-11-11 20:09:51 +0200 2)   pkg.installed:
-616a2948 (SeppanenP         2018-11-11 20:09:51 +0200 3)   - pkgs:
-616a2948 (SeppanenP         2018-11-11 20:09:51 +0200 4)     - gimp
-616a2948 (SeppanenP         2018-11-11 20:09:51 +0200 5)     - vlc
-00000000 (Not Committed Yet 2018-11-11 19:18:04 +0000 6)     - windows
+	xubuntu@xubuntu:~/spegit/srv/salt/tools$ git blame init.sls
+	616a2948 (SeppanenP         2018-11-11 20:09:51 +0200 1) install_tools:
+	616a2948 (SeppanenP         2018-11-11 20:09:51 +0200 2)   pkg.installed:
+	616a2948 (SeppanenP         2018-11-11 20:09:51 +0200 3)   - pkgs:
+	616a2948 (SeppanenP         2018-11-11 20:09:51 +0200 4)     - gimp
+	616a2948 (SeppanenP         2018-11-11 20:09:51 +0200 5)     - vlc
+	00000000 (Not Committed Yet 2018-11-11 19:18:04 +0000 6)     - windows
 
 Valitettavasti tuo Windows ei taida asentua noin helposti koneelle, joten joudun poistamaan sen asennettavien ohjelmien joukosta. Koska olin antanut jo git add . komennon muutokset on jo valmisteltu julkaisemista varten.
 Annoin komennon:
@@ -216,18 +216,25 @@ Annoin komennon:
 
 Jolloin tuli ilmoitus:
 
-xubuntu@xubuntu:~/spegit/srv/salt/tools$ git reset --hard
-HEAD is now at 3a55795 Update top.sls
-
+	xubuntu@xubuntu:~/spegit/srv/salt/tools$ git reset --hard
+	HEAD is now at 3a55795 Update top.sls
 
 ja git blame näytti:
 
-xubuntu@xubuntu:~/spegit/srv/salt/tools$ git blame init.sls
-616a2948 (SeppanenP 2018-11-11 20:09:51 +0200 1) install_tools:
-616a2948 (SeppanenP 2018-11-11 20:09:51 +0200 2)   pkg.installed:
-616a2948 (SeppanenP 2018-11-11 20:09:51 +0200 3)   - pkgs:
-616a2948 (SeppanenP 2018-11-11 20:09:51 +0200 4)     - gimp
-616a2948 (SeppanenP 2018-11-11 20:09:51 +0200 5)     - vlc
+	xubuntu@xubuntu:~/spegit/srv/salt/tools$ git blame init.sls
+	616a2948 (SeppanenP 2018-11-11 20:09:51 +0200 1) install_tools:
+	616a2948 (SeppanenP 2018-11-11 20:09:51 +0200 2)   pkg.installed:
+	616a2948 (SeppanenP 2018-11-11 20:09:51 +0200 3)   - pkgs:
+	616a2948 (SeppanenP 2018-11-11 20:09:51 +0200 4)     - gimp
+	616a2948 (SeppanenP 2018-11-11 20:09:51 +0200 5)     - vlc
+	
+Kun menin muokkaamaan README.md tiedostoa, huomasin että olin poistanut samalla kaikki raporttiin kirjoittamani tekstit, joita en ollut julkaissut ennen tuota reset --hard -komentoa. Onneksi olin päivittänyt muutoksia GitHubiin säännöllisesti...
+
+Kun julkaisin muutokset git add ./commit/pull/push, niin vain README.md tiedostoon tehdyt muutokset päivittyivät GitHubiin.
+
+## Lopuksi
+
+Tehtävä oli todella mielenkiintoinen ja raportin tekeminen oli näppärää, kun pystyin kopioimaan tekstiä suoraan komentoriviltä Livetikkukoneella ja siirtämään sen raporttiin suoraan komentorivillä. Päivittämisen jälkeen pystyin muokaamaan toisella koneella samaa tiedostoa GitHubissa. Yksittäinen aikaavievin tehtävä oli löytää tapa ajaa moduli salt-minion koneella paikallisesti, mutta siihen löytyi apuja pienen selailun jälkeen. Aikaa tehtäviin meni parisen pitkää iltaa viikonloppuna.
 
 
 ## Lähteet
