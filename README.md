@@ -168,9 +168,9 @@ En tehnyt high.sh-tiedostoa vaan menin spegit kansioon ja annoin komennon:
         
 Hetkeen ei tapahtunut mitään, mutta lopulta molemmat ohjelmat asentuivat koneelle.
 
-xubuntu@xubuntu:~/spegit$ sudo salt-call --local state.highstate --file-root srv/salt
-local:
-----------
+    xubuntu@xubuntu:~/spegit$ sudo salt-call --local state.highstate --file-root srv/salt
+    local:
+    ----------
           ID: install_tools
     Function: pkg.installed
       Result: True
@@ -183,13 +183,15 @@ local:
 
 
 
-Summary for local
-------------
-Succeeded: 1 (changed=1)
-Failed:    0
-------------
-Total states run:     1
-Total run time:  40.914 s
+    Summary for local
+    ------------
+    Succeeded: 1 (changed=1)
+    Failed:    0
+    ------------
+    Total states run:     1
+    Total run time:  40.914 s
+
+Molemmat ohjelmat löytyivät livetikkukoneelta.
 
 
 
